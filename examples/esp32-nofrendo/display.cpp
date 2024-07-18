@@ -70,9 +70,8 @@ extern void display_begin()
 
 #ifdef TFT_BL
     // turn display backlight on
-    ledcSetup(1, 12000, 8);       // 12 kHz PWM, 8-bit resolution
-    ledcAttachPin(TFT_BL, 1);     // assign TFT_BL pin to channel 1
-    ledcWrite(1, TFT_BRIGHTNESS); // brightness 0 - 255
+    ledcAttach(TFT_BL,12000, 8);  // 12 kHz PWM, 8-bit resolution
+    ledcWrite(TFT_BL, TFT_BRIGHTNESS); // brightness 0 - 255
 #endif
 }
 
